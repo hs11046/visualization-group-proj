@@ -1,0 +1,3 @@
+# Files >100MB can't be pushed to GitHub; see README.md for how to get them.
+datasets/lmarena-arena55k/train.csv
+datasets/lmarena-arena140k/

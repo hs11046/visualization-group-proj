@@ -1,0 +1,34 @@
+﻿PAGES: 2
+===== PAGE 1 =====
+Lab 1 Tableau Installation  
+COMP7507 Visualization and Visual Analytics  
+ 
+        
+Introduction of Tableau  
+Tableau [ˈtæbləʊ] is a company of interactive data visualization for bloggers, journalists, researchers, 
+advocates, professors and students to make their storytelling expressive and insightful. It offers several 
+main products: Tableau Desktop, Tableau Server, Tableau Online, Tableau Reader, Tableau Public, etc.  
+Download Tableau Desktop  
+  
+Tableau offers a free student license (Fig.1).   
+ 
+  
+Go to https://www.tableau.com/academic/students, fill in the forms with your HKU student information 
+to verify your student identity and download the software.   
+  
+Fig.2 Download the app  
+  
+  
+  
+Fig.1 Tableau webpage  
+
+===== PAGE 2 =====
+Another Option: Tableau Public  
+  
+If you don't want to download Tableau Desktop, you can use Tableau Public (Fig.3). Tableau Public has 
+most of the features that Tableau Desktop has, all works created by Tableau Public must be saved on a 
+public server, and when using Tableau Desktop, you can save your work on your local system.  
+ 
+Fig.3 Tableau Public  
+  
+
