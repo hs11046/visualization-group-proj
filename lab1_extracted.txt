@@ -1,0 +1,193 @@
+﻿PAGES: 14
+===== PAGE 1 =====
+Lab 1 - Exploring the Dataset & Tableau Basics
+You will start this lab by exploring the wine dataset and its attributes. As you review the data,
+consider what types of basic visualizations you can create in Tableau and what insights each
+chart might reveal.
+The main goal of this lab is to help you get comfortable with creating and interpreting basic
+Tableau plots—such as bar charts, histograms, maps, scatter plots, and pie charts. Focus on
+building individual visualizations to better understand the data and lay the foundation for more
+advanced analysis in future labs.
+You can use either Tableau Desktop or Tableau Public Online. For the online version, visit
+Tableau Public, then select "Create > Web Authoring" to start building visualizations in your
+browser.
+Dataset Overview
+The wine dataset contains nearly 130,000 reviews from around the world, with information such
+as country, region, variety, description, points (ratings), and price. This enables analysis of wine
+characteristics, popularity, and trends across different countries and categories.
+We have organized the data into several files for different analysis tasks:
+Please download the datasets from Moodle and save them somewhere easy to find. You
+will use these files in this and future labs.
+Observe the Dataset
+Before you start visualizing, take a few minutes to review the dataset and understand what
+each attribute means. This will help you decide what questions you can ask and what charts
+might be useful.
+Source: Kaggle Wine Reviews
+winemag-data-with-year.csv: Includes a year extracted from the wine title for time-
+based analysis.
+wine_category.csv: Maps wine varieties into five categories: red, white, rose, sparkling,
+and other.
+===== PAGE 2 =====
+Attributes in winemag-data-with-year.csv:
+Attributes in wine_category.csv:
+Possible Visualizations:
+Analysis Goal Chart Type Example Questions
+Summary StatisticsBar Chart Which countries have the highest-rated 
+wines?
+Distribution Histogram, Box Plot What’s the price distribution for red wines?
+Relationships Scatter Plot Are higher-rated wines more expensive?
+Composition Pie Chart, Stacked Bar 
+Chart
+What's the breakdown of wine categories 
+globally?
+Hierarchy & 
+Quantity
+Treemap Which varieties dominate each category?
+Geographic 
+Analysis
+Filled Map Where are top-rated wines produced?
+Temporal Trends Line/Area Chart How have ratings changed over time?
+Rankings Top N Lists What are the top 10 most-reviewed 
+varieties?
+And more ...
+Note: A single question can often be visualized in multiple ways (e.g. bar vs treemap).
+country: Country of origin
+province: State or province where the wine is produced
+region_1, region_2: Specific wine regions within the province
+winery: Name of the winery
+designation: Special name/title of the wine
+variety: Type of grape or wine
+title: Full wine review title (often includes vintage/year)
+points: Wine rating (1-100)
+price: Price per
+description: Review text
+taster_name, taster_twitter_handle: Reviewer information
+variety: Type of grape or wine
+category: Wine category (red, white, rose, sparkling, other)
+===== PAGE 3 =====
+Practice in Tableau
+In this section, you’ll create different types of visualizations to explore the wine dataset and get
+comfortable using Tableau.
+Goal:
+1. Import the Dataset
+This allows us to access the wine category (red/white/sparkling/...) for each wine entry.
+Practice importing and connecting datasets
+Create various charts (map, bar, scatter, box, line, etc.)
+Learn to format and enhance visualizations with labels, tooltips, colors, and calculated fields
+Open Tableau and connect to winemag-data-with-year.csv as a Text File
+Add a second data source: wine_category.csv
+Use the variety column to join the two datasets
+===== PAGE 4 =====
+2. Map View: Wine Distribution by Country
+You can change color palettes (click color → edit colors) and add filters (e.g., right-click
+country → Filter → filter by general manual selection or conditions like top 10 review counts)
+Double-click country → Tableau will auto-generate a map
+Drag attributes to customize:
+number of reviews (winemag-data-with-year.csv(Count)) to Color
+(Optional) Play with other marks like Color or Size (for a symbol map). For example,
+add points (hint: to make the color representation more meaningful, click
+SUM(Points) and set Measure to Average).
+===== PAGE 5 =====
+3. Bar Chart (Alternative to Map)
+Same data, different view—more compact and easier to compare
+In addition to a filled map, the same visualization can be shown in a bar chart
+Duplicate the map sheet and switch to a horizontal bar chart
+Add category as Color to compare wine types within each country
+Sort bars by count, and optionally drag number of reviews to Label to show numbers on
+bars
+===== PAGE 6 =====
+4. Wine Category Distribution
+Explore how wine types are distributed globally using:
+You can exclude unimportant or ambigous categories like "null".
+Treemap: Good for comparing proportions and quantity
+Pie chart: Compact overview (avoid overuse)
+Stacked bar chart: Compare multiple categories per country or region
+===== PAGE 7 =====
+5. Add Tooltip Chart to the Map
+To enrich the map:
+Tableau will automatically filter by the hovered country
+Add the category distribution chart as a Tooltip visualization (click Tooltip → Insert →
+Sheets)
+When hovering over a country, the tooltip shows its wine breakdown (e.g. red vs white)
+===== PAGE 8 =====
+6. Statistical Relationship: Price vs. Points
+Use this to explore: Are more expensive wines rated higher?
+Drag price to Columns (X-axis) and points to Rows (Y-axis) to create a scatter plot
+In the Analysis pane, uncheck "Aggregate Measures" to display individual data points
+rather than summed values.
+Add variety as Color (optional)
+Right-click → Show Trend Lines
+===== PAGE 9 =====
+7. Box Plot: Country Comparison
+Box plots offer a clear summary of variation and consistency
+Use points as the measure
+Break down by country or category
+Display outliers, median, and the range of ratings. Adjust the axis range for clearer
+visualization and easier comparison.
+===== PAGE 10 =====
+8. Time Series
+Helps analyze trends in reviewer activity
+Use year as the Columns (X-axis). You may use filter to only keep data from 1985 to 2016
+for clearer visualization.
+Show average rating or review count over time
+Try both:
+Line chart with taster_name as color
+Area chart to show contribution over time
+===== PAGE 11 =====
+9. Calculated Field: Rating per Dollar
+A Tableau calculated field is a custom field you create by writing a formula using existing
+fields in your data. This lets you perform calculations, transform data (continuous to
+categorial), or create new metrics directly within Tableau, without changing your original
+dataset.
+On the Data panel, right-click to create a calculated field called "Rating per Dollar" with the
+formula [Points]/[Price].
+Use this to find high-value wines—well-rated but affordable
+===== PAGE 12 =====
+10. Final Touches: Rename, Annotate, and Caption
+Make your charts easier to understand:
+Rename each worksheet (e.g., "Map: Avg Rating by Country"). You may rename tab names
+as well, which helps you distinguish different sheets when creating dashboards/stories.
+Add annotations to highlight interesting insights directly on your charts (right-click →
+Annotate). Focus on key trends, outliers, or notable comparisons.
+Enable captions (Worksheet → Show Caption) and customize the caption to clearly explain
+what each color represents, especially for charts with complex color schemes (e.g., multiple
+categories, gradients, or conditional formatting) when sharing.
+===== PAGE 13 =====
+11. Save and Publish
+You’ll need to submit the link for your lab assignment
+Save your workbook to Tableau Public
+In Tableau Public, enable "Show Sheets as Tabs". This lets others easily switch between
+your charts
+===== PAGE 14 =====
+Your Task
+You task is to explore US wine data and practice the visualizations covered in class in Tableau.
+You’ll build 3 individual charts that answer key questions about wine distribution, wine types,
+and wine quality trends.
+Important: For all your visualizations in this lab task, you must filter the dataset to include only
+wines from the United States. In each of your chart, set a filter on the country field and
+ONLY keep US.
+Please complete the following:
+1. Which US State Has the Most Wine Reviews?
+Use a map to show wine review distribution across US states (province)
+Use colors to differential states by review count
+Highlight the state with the most reviews using annotation.
+2. What Types of Wine Are Popular in Each State?
+Show wine category distribution (category) within each US state
+You may:
+Create a bar chart for each state, using distinct colors to represent different wine
+categories.
+OR present a highlighted table showing wine categories versus states. Use
+colors to indicate the popularity (i.e., count of reviews).
+3. How Have US Wine Ratings Changed Over Time?
+Use a line chart to plot average rating (points) by year, using data from 1985 to 2016.
+Assign different colors for different states
+Note: you can set the y-axis (points) range from 80 to 95 for better visibility.
+4. Naming and Organization:
+Rename each worksheet clearly
+Add meaningful captions or annotations for Task1 map.
+Use clean and readable formatting (labels, colors, sorting)
+5. Submission:
+Save to Tableau Public
+Rename workbook: “Wine Overview Exploration”.
+Enable show sheets as tabs so all charts are visible
+Submit your Tableau Public link on Moodle
